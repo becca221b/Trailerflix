@@ -47,9 +47,40 @@ app.get('/categoria/:cat',(req,res)=>{
     }else{
         return res.status(404).send(`<h2>No existe la categoría: ${parametro}</h2>`)
     }
-        
+})
 
+app.get('/reparto/:act',(req,res)=>{
+    const parametro= req.params.act.trim().toLowerCase();
+    const resultado = TRAILERFLIX.filter(pelis=>pelis.reparto.trim().toLowerCase().includes(parametro));
+    res.json(resultado.reparto);
+    //acá usar map para retorna solo un array con la propiedad “reparto” y la propiedad
+    //“titulo” y sus respectivos datos
+})
+
+app.get('/trailer/:id',(req,res)=>{
+    const parametro = parseInt(req.params.id);
+    if(isNaN(parametro)){
+        return res.status(400).json({error: 'El ID debe ser un número'})
+    }
     
+    const resultado = TRAILERFLIX.find(peli=>peli.id == parametro);
+        
+    if(!resultado){
+        return res.status(404).json({
+            "mensaje":'Contenido no encontrado'
+        })
+    }
+    if(!resultado?.trailer){
+        return res.json({
+            "mensaje": 'Video no disponible'
+        })
+    }else{
+        res.json({
+            "id": resultado.id,
+            "titulo": resultado.titulo,
+            "trailer": resultado.trailer
+        })
+    }
     
 })
 

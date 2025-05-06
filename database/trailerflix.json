@@ -1245,5 +1245,17 @@
       "duracion": "101 minutos",
       "reparto": "Raúl Juliá, Anjelica Huston, Christopher Lloyd, Christina Ricci, Carel Struycken, Dan Hedaya, Jimmy Workman, Elizabeth Wilson, Dana Ivey",
       "trailer": "https://www.youtube.com/embed/G388UMkJIBE"
-   }
+   },
+{
+      "id": 999,
+      "poster": "./posters/98.jpg",
+      "titulo": "La Familia Addams - SIN TRAILER",
+      "categoria": "Película",
+      "genero": "Familia",
+      "tags": "Familia, Comedia, Fantasía",
+      "resumen": "El delirante y gótico estilo de vida de la peculiar familia Addams se ve amenazado peligrosamente cuando el codicioso dúo que forman madre e hijo, con la ayuda de un abogado sin ningún escrúpulos, conspiran para hacerse con la fortuna familiar... (No se pierdan las locutras de Gomez, Morticia, Tío Lucas, Merlina, El tío Cosas, Dedos y Largo)",
+      "temporadas": "N/A",
+      "duracion": "101 minutos",
+      "reparto": "Raúl Juliá, Anjelica Huston, Christopher Lloyd, Christina Ricci, Carel Struycken, Dan Hedaya, Jimmy Workman, Elizabeth Wilson, Dana Ivey"   }
+
 ]

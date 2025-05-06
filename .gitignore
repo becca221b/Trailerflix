@@ -1,0 +1,12 @@
+# Evita subir archivos de entorno
+.env
+
+# Evita subir módulos de Node (se regeneran con npm install)
+node_modules/
+
+# Archivos del sistema (opcional)
+.DS_Store
+Thumbs.db
+
+# Logs y archivos temporales
+*.log
