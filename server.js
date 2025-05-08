@@ -97,7 +97,7 @@ app.get('/trailer/:id', asyncHandler(async (req,res)=>{
 
 // Middleware de error 404 para cualquier otra ruta
 app.use((req, res) => {
-    res.status(404).json({ error: 'Ruta no encontrada' });
+    res.status(404).json({ error: 'Ouch!! Esa ruta no existe'});
 });
 
 // Middleware 500 - para cualquier error que se dispare
