@@ -52,9 +52,13 @@ app.get('/categoria/:cat',(req,res)=>{
 app.get('/reparto/:act',(req,res)=>{
     const parametro= req.params.act.trim().toLowerCase();
     const resultado = TRAILERFLIX.filter(pelis=>pelis.reparto.trim().toLowerCase().includes(parametro));
-    res.json(resultado.reparto);
-    //acá usar map para retorna solo un array con la propiedad “reparto” y la propiedad
-    //“titulo” y sus respectivos datos
+    const reparto = resultado.map(peli=>{
+        return {
+            "titulo" : peli.titulo,
+            "reparto" : peli.reparto
+        }
+    })
+    res.json(reparto);
 })
 
 app.get('/trailer/:id',(req,res)=>{
@@ -83,6 +87,15 @@ app.get('/trailer/:id',(req,res)=>{
     }
     
 })
+
+// Middleware de error 404 para cualquier otra ruta(responde en formato JSON)
+app.use((req, res) => {
+    res.status(404).json({
+      error: true,
+      message: 'No es la ruta que estás buscando',
+      code: 404
+    });
+  });
 
 //servidor
 const PORT = process.env.PORT;
